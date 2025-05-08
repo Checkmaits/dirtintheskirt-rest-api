@@ -13,3 +13,5 @@ vercel.json
 .vscode/
 .idea/
 .prettierrc
+
+.DS_Store
