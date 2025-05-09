@@ -8,6 +8,7 @@ import rateLimit from "express-rate-limit";
 
 import messageRoute from "./routes/message.route.js";
 import sponsorRoute from "./routes/sponsor.route.js";
+import reviewRoute from "./routes/review.route.js";
 
 import { ERROR_404 } from "./utils/error.utils.js";
 import { connectToMongoDB } from "./utils/db.utils.js";
@@ -32,6 +33,7 @@ app.use(
 
 app.use("/api/v1/messages", messageRoute);
 app.use("/api/v1/sponsors", sponsorRoute);
+app.use("/api/v1/reviews", reviewRoute);
 
 app.use((req, res, next) => next(ERROR_404));
 app.use((error, req, res, next) => res.status(error.status || 500).json(error));
